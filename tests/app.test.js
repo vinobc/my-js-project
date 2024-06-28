@@ -21,6 +21,6 @@ describe("GET /", () => {
     request(`http://localhost:${process.env.PORT}`)
       .get("/")
       .expect(200)
-      .expect("200", done);
+      .expect("Hello, Jenkins CI/CD with Node.js!", done);
   });
 });
