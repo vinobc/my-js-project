@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
 
 // New route added
 app.get("/about", (req, res) => {
-  res.send("About Page: Jenkins CI/CD with Node.js!");
+  res.send("About Page: Jenkins CI/CD with Node.js!!");
 });
 
 const PORT = process.env.PORT || 3000;
