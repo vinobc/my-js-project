@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    tools {
+        nodejs 'NodeJS 22'
+    }
+
     stages {
         stage('Install Dependencies') {
             steps {
@@ -12,6 +17,7 @@ pipeline {
             }
         }
     }
+
     post {
         always {
             echo 'Build completed!'
