@@ -17,7 +17,7 @@ afterAll((done) => {
 });
 
 describe("GET /", () => {
-  it("should return Hello, Jenkins CI/CD with Node.js!", (done) => {
+  it("should return 200", (done) => {
     request(`http://localhost:${process.env.PORT}`)
       .get("/")
       .expect(200)
