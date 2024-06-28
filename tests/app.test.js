@@ -1,22 +1,23 @@
 const request = require("supertest");
-const { app, server } = require("../app");
+const { app } = require("../app");
+
+let server;
+
+beforeAll((done) => {
+  const PORT = process.env.TEST_PORT || 3001;
+  server = app.listen(PORT, () => {
+    console.log(`Test server is running on port ${PORT}`);
+    done();
+  });
+});
+
+afterAll((done) => {
+  server.close(done);
+});
 
 describe("GET /", () => {
-  let testServer;
-
-  beforeAll(() => {
-    const PORT = 3001; // Use a different port for testing
-    testServer = app.listen(PORT, () => {
-      console.log(`Test server is running on port ${PORT}`);
-    });
-  });
-
-  afterAll((done) => {
-    testServer.close(done); // Ensure the server is closed after tests
-  });
-
   it("should return Hello, Jenkins CI/CD with Node.js!", (done) => {
-    request(app)
+    request(server)
       .get("/")
       .expect(200)
       .expect("Hello, Jenkins CI/CD with Node.js!", done);
