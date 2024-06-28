@@ -5,6 +5,10 @@ pipeline {
         nodejs 'NodeJS 22'
     }
 
+    environment {
+        TEST_PORT = '3001'
+    }
+
     stages {
         stage('Install Dependencies') {
             steps {
