@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles --forceExit"
+    "test": "jest --detectOpenHandles --forceExit",
+    "build": "echo 'Build step placeholder'",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -14,6 +16,7 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
-    "supertest": "^7.0.0"
+    "supertest": "^7.0.0",
+    "eslint": "^8.38.0"
   }
 }
